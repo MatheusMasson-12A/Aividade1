@@ -1,0 +1,142 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1a1a2d 0%, #1a1a2d 50%, #4a0e0e 100%);
+    color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+}
+
+.form-page .form-container,
+.list-page .list-container {
+    width: 100%;
+}
+
+h1 {
+    color: #ff7979;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+#products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.product {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+}
+
+.product h3 {
+    margin-top: 0;
+    color: #64b5f6;
+}
+
+.product p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+.price {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2ecc71;
+    margin-bottom: 15px;
+}
+
+.nav-link {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 250px;
+    margin: 20px auto 0;
+    text-align: center;
+    padding: 12px 20px;
+    background-color: #1e90ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+.nav-link:hover {
+    background-color: #4682b4;
+}
+
+form {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #4a4a88;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #1a1a2d;
+    color: #f0f0f0;
+}
+
+button {
+    display: block;
+    width: 100%;
+    max-width: 250px;
+    margin: 15px auto 0;
+    padding: 12px;
+    border: none;
+    background-color: #ff4757;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #e03e4f;
+}
+
+button[onclick^="deleteProduct"] {
+    background-color: #c0392b;
+    margin-top: auto;
+}
+
+button[onclick^="deleteProduct"]:hover {
+    background-color: #e74c3c;
+}
