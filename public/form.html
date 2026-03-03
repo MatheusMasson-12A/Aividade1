@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header>
+        <nav>
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="form.html" class="nav-link active">Register Product</a>
+        </nav>
+    </header>
     <div class="container form-page">
         <div class="form-container">
             <h1>Register Product</h1>
@@ -16,7 +22,6 @@
                 <input type="number" id="price" placeholder="Price" required min="0" step="0.01">
                 <button type="submit">Register</button>
             </form>
-            <a href="index.html" class="nav-link">View Products</a>
         </div>
     </div>
     <script>
@@ -32,7 +37,6 @@
                 body: JSON.stringify({ name, description, price })
             });
             
-            // Redirect to the product list page after submission
             window.location.href = 'index.html';
         });
     </script>

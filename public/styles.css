@@ -3,30 +3,62 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #1a1a2d 0%, #1a1a2d 50%, #4a0e0e 100%);
+    background: #000;
     color: #f0f0f0;
     margin: 0;
-    padding: 20px;
+    padding-top: 80px; 
+}
+
+header {
+    background: rgba(18, 18, 18, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+nav {
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    gap: 30px;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.nav-link {
+    color: #f0f0f0;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-link.active {
+    color: #ff7979;
+    font-weight: 600;
 }
 
 .container {
     width: 100%;
     max-width: 900px;
-}
-
-.form-page .form-container,
-.list-page .list-container {
-    width: 100%;
+    margin: 20px auto;
+    padding: 0 20px;
 }
 
 h1 {
     color: #ff7979;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
     text-align: center;
+    margin-bottom: 30px;
 }
 
 #products {
@@ -36,7 +68,7 @@ h1 {
 }
 
 .product {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.07);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     padding: 20px;
@@ -45,7 +77,6 @@ h1 {
     backdrop-filter: blur(5px);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
 .product:hover {
@@ -58,11 +89,6 @@ h1 {
     color: #64b5f6;
 }
 
-.product p {
-    font-size: 14px;
-    color: #ccc;
-}
-
 .price {
     font-size: 16px;
     font-weight: 600;
@@ -70,27 +96,21 @@ h1 {
     margin-bottom: 15px;
 }
 
-.nav-link {
-    display: block;
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 250px;
-    margin: 20px auto 0;
-    text-align: center;
-    padding: 12px 20px;
-    background-color: #1e90ff;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.2s;
+.product-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
 }
 
-.nav-link:hover {
-    background-color: #4682b4;
+.product-buttons button {
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 14px;
+    margin: 0;
 }
 
 form {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.07);
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
@@ -106,10 +126,10 @@ textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid #4a4a88;
+    border: 1px solid #444;
     border-radius: 5px;
     box-sizing: border-box;
-    background-color: #1a1a2d;
+    background-color: #111;
     color: #f0f0f0;
 }
 
@@ -132,11 +152,57 @@ button:hover {
     background-color: #e03e4f;
 }
 
-button[onclick^="deleteProduct"] {
-    background-color: #c0392b;
-    margin-top: auto;
+.delete-button {
+    background-color: #c0392b !important;
 }
 
-button[onclick^="deleteProduct"]:hover {
-    background-color: #e74c3c;
+.delete-button:hover {
+    background-color: #e74c3c !important;
+}
+
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 2000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+    background-color: #1e1e1e;
+    margin: 15% auto;
+    padding: 25px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    position: relative;
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #ff7979;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modalDescription {
+    color: #eee;
+    font-size: 16px;
+    line-height: 1.6;
 }
